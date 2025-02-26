@@ -54,7 +54,7 @@ var SeriesCircuit = /** @class */ (function () {
         this.g.stroke();
         var areaStartX = x;
         for (var i = 0; i < this.resistors.length; i++) {
-            this.g.strokeStyle = (this.resistors[i].getR() >= 500) ? "brown" : "black";
+            this.g.strokeStyle = (this.resistors[i].getR() >= 500) ? "brown" : "black"; //vaja parandada
             this.resistors[i].draw(this.g, x, this.y);
             x += this.resistors[i].getWidth();
         }
