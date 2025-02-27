@@ -1,1 +1,72 @@
-Esimese kontrolltööga sarnaneva kolme alapunktiga ülesande lahendus
+Esimese kontrolltööga sarnaneva kolme alapunktiga ülesande lahendus.
+
+
+class LibisevKeskmine {
+    private arvud: number[] = [];
+    private keskmised: number[] = [];
+
+    lisaArv(arv: number) {
+        this.arvud.push(arv);
+
+        // Kui on vähemalt 3 elementi, arvuta uusim libisev keskmine
+        if (this.arvud.length >= 3) {
+            let viimaneIndeks = this.arvud.length - 1;
+            let uusKeskmine = (this.arvud[viimaneIndeks] + this.arvud[viimaneIndeks - 1] + this.arvud[viimaneIndeks - 2]) / 3;
+            this.keskmised.push(uusKeskmine);
+        }
+    }
+
+    saaLibisevKeskmine(): number[] {
+        return this.keskmised;
+    }
+}
+
+// Näidis kasutamine:
+const keskmineArvutaja = new LibisevKeskmine();
+
+keskmineArvutaja.lisaArv(1);
+keskmineArvutaja.lisaArv(2);
+keskmineArvutaja.lisaArv(3);
+keskmineArvutaja.lisaArv(4);
+keskmineArvutaja.lisaArv(5);
+keskmineArvutaja.lisaArv(6);
+
+console.log(keskmineArvutaja.saaLibisevKeskmine());
+// Oodatud väljund: [2, 3, 4, 5]
+
+
+class LibisevKeskmine {
+    private arvud: number[] = [];      // Kõik lisatud arvud
+    private keskmised: number[] = [];  // Eelnevalt arvutatud libiseva keskmise väärtused
+
+    // Meetod uue arvu lisamiseks
+    addNew(arv: number): void {
+        this.arvud.push(arv);
+
+        // Kui on vähemalt 3 arvu, arvuta ainult uus libisev keskmine
+        if (this.arvud.length >= 3) {
+            let viimane = this.arvud.length - 1;
+            let uusKeskmine = (this.arvud[viimane] + this.arvud[viimane - 1] + this.arvud[viimane - 2]) / 3;
+            this.keskmised.push(uusKeskmine);
+        }
+    }
+
+    // Meetod libiseva keskmise massiivi tagastamiseks
+    getKeskmised(): number[] {
+        return this.keskmised;
+    }
+}
+
+// ---- KASUTAMINE ----
+const keskmineArvutaja = new LibisevKeskmine();
+
+keskmineArvutaja.addNew(1);
+keskmineArvutaja.addNew(2);
+keskmineArvutaja.addNew(3);
+keskmineArvutaja.addNew(4);
+keskmineArvutaja.addNew(5);
+keskmineArvutaja.addNew(6);
+
+console.log(keskmineArvutaja.getKeskmised());
+// Oodatud väljund: [2, 3, 4, 5]
+
