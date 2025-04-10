@@ -1,13 +1,14 @@
+"use strict";
 var _a;
-var SavingsAccount = /** @class */ (function () {
-    function SavingsAccount(initialBalance) {
+class SavingsAccount {
+    constructor(initialBalance) {
         this.balance = initialBalance;
     }
-    SavingsAccount.prototype.deposit = function (amount) {
+    deposit(amount) {
         this.balance += amount;
         updateBalance(this.balance);
-    };
-    SavingsAccount.prototype.withdraw = function (amount) {
+    }
+    withdraw(amount) {
         if (amount > this.balance) {
             alert("Pole piisavalt raha kontol!");
         }
@@ -15,23 +16,22 @@ var SavingsAccount = /** @class */ (function () {
             this.balance -= amount;
             updateBalance(this.balance);
         }
-    };
-    SavingsAccount.prototype.getBalance = function () {
+    }
+    getBalance() {
         return this.balance;
-    };
-    return SavingsAccount;
-}());
-var DailyAccount = /** @class */ (function () {
-    function DailyAccount(initialBalance, dailyLimit) {
+    }
+}
+class DailyAccount {
+    constructor(initialBalance, dailyLimit) {
         this.dailyWithdrawn = 0;
         this.balance = initialBalance;
         this.dailyLimit = dailyLimit;
     }
-    DailyAccount.prototype.deposit = function (amount) {
+    deposit(amount) {
         this.balance += amount;
         updateBalance(this.balance, this.dailyLimit - this.dailyWithdrawn);
-    };
-    DailyAccount.prototype.withdraw = function (amount) {
+    }
+    withdraw(amount) {
         if (this.dailyWithdrawn + amount > this.dailyLimit) {
             alert("Oled ületanud päevase väljavõtmislimiidi!");
             return;
@@ -43,21 +43,20 @@ var DailyAccount = /** @class */ (function () {
         this.balance -= amount;
         this.dailyWithdrawn += amount;
         updateBalance(this.balance, this.dailyLimit - this.dailyWithdrawn);
-    };
-    DailyAccount.prototype.getBalance = function () {
+    }
+    getBalance() {
         return this.balance;
-    };
-    DailyAccount.prototype.getRemainingDailyLimit = function () {
+    }
+    getRemainingDailyLimit() {
         return this.dailyLimit - this.dailyWithdrawn;
-    };
-    return DailyAccount;
-}());
+    }
+}
 //Näidiskontod
-var savings = new SavingsAccount(500);
-var daily = new DailyAccount(500, 300);
-var activeAccount = savings;
+let savings = new SavingsAccount(500);
+let daily = new DailyAccount(500, 300);
+let activeAccount = savings;
 //kasutaja valib kontode vahel
-(_a = document.getElementById("accountType")) === null || _a === void 0 ? void 0 : _a.addEventListener("change", function (event) {
+(_a = document.getElementById("accountType")) === null || _a === void 0 ? void 0 : _a.addEventListener("change", (event) => {
     activeAccount = event.target.value === "daily" ? daily : savings;
     if (activeAccount instanceof DailyAccount) {
         updateBalance(activeAccount.getBalance(), activeAccount.getRemainingDailyLimit());
@@ -67,12 +66,12 @@ var activeAccount = savings;
     }
 });
 function deposit() {
-    var amount = getAmount();
+    const amount = getAmount();
     if (amount > 0)
         activeAccount.deposit(amount);
 }
 function withdraw() {
-    var amount = getAmount();
+    const amount = getAmount();
     if (amount > 0)
         activeAccount.withdraw(amount);
 }

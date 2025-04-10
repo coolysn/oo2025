@@ -1,6 +1,7 @@
-var eesnimi = "Juku";
+"use strict";
+let eesnimi = "Juku";
 //let eesnimi:string=56;
-var vanus = 8;
+let vanus = 8;
 console.log("abc");
 console.log("Tere," + eesnimi);
 if (vanus < 7) {
@@ -16,8 +17,8 @@ else {
         console.log("Täispilet");
     }
 }
-var symbolid = [];
-for (var nr = 0; nr < vanus; nr++) {
+let symbolid = [];
+for (let nr = 0; nr < vanus; nr++) {
     symbolid.push("*");
 }
 console.log(symbolid.join(""));

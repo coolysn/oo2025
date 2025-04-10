@@ -1,49 +1,47 @@
+"use strict";
 //Array
-var CharCounter = /** @class */ (function () {
+class CharCounter {
     //Takes adder onject as a parameter and stores it in a protected variable
-    function CharCounter(adder) {
+    constructor(adder) {
         this.adder = adder;
     }
     //add number of words to the character give to the Adder
     //method which designed to take a string (word)
-    CharCounter.prototype.addWordCharacters = function (word) {
+    addWordCharacters(word) {
         this.adder.add(word.length);
-    };
-    CharCounter.prototype.getCharacterCount = function () {
+    }
+    getCharacterCount() {
         return this.adder.getSum();
-    };
-    return CharCounter;
-}());
-var StoringAdder = /** @class */ (function () {
-    function StoringAdder() {
+    }
+}
+class StoringAdder {
+    constructor() {
         this.store = []; //arrays hoidmine
     }
-    StoringAdder.prototype.add = function (nr) {
-        this.store.push(nr);
-    };
-    StoringAdder.prototype.getSum = function () {
-        var sum = 0;
+    add(nr) {
+        this.store.push(nr); //instead of updating a running total, nr stored individually
+    }
+    getSum() {
+        let sum = 0;
         //iterated through all stored numbers and add them to the sum
-        for (var _i = 0, _a = this.store; _i < _a.length; _i++) {
-            var amount = _a[_i];
+        for (let amount of this.store) {
             sum += amount;
         }
         return sum;
-    };
-    StoringAdder.prototype.getAverage = function () {
+    }
+    getAverage() {
         if (this.store.length > 0) {
             return this.getSum() / this.store.length;
         }
         return 0;
-    };
-    StoringAdder.prototype.getRange = function () {
+    }
+    getRange() {
         if (this.store.length == 0) {
             return 0;
         }
-        var minimum = this.store[0];
-        var maximum = minimum;
-        for (var _i = 0, _a = this.store; _i < _a.length; _i++) {
-            var amount = _a[_i];
+        let minimum = this.store[0];
+        let maximum = minimum;
+        for (let amount of this.store) {
             if (amount < minimum) {
                 minimum = amount;
             }
@@ -53,11 +51,10 @@ var StoringAdder = /** @class */ (function () {
             ;
         }
         return maximum - minimum;
-    };
-    return StoringAdder;
-}());
-var adder1 = new StoringAdder();
-var counter1 = new CharCounter(adder1);
+    }
+}
+let adder1 = new StoringAdder();
+let counter1 = new CharCounter(adder1);
 counter1.addWordCharacters("Juku");
 counter1.addWordCharacters("tuli");
 counter1.addWordCharacters("kooli");

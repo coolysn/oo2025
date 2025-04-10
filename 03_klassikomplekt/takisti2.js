@@ -1,5 +1,6 @@
-var Resistor = /** @class */ (function () {
-    function Resistor(r, g, startx, endx, y) {
+"use strict";
+class Resistor {
+    constructor(r, g, startx, endx, y) {
         this.r = r;
         this.g = g;
         this.startx = startx;
@@ -9,7 +10,7 @@ var Resistor = /** @class */ (function () {
         this.width = this.endx - this.startx;
         this.draw();
     }
-    Resistor.prototype.draw = function () {
+    draw() {
         this.g.beginPath();
         this.g.moveTo(this.startx, this.y);
         this.g.lineTo(this.startx + this.width / 4, this.y);
@@ -18,6 +19,5 @@ var Resistor = /** @class */ (function () {
         this.g.lineTo(this.endx, this.y);
         this.g.stroke();
         this.g.fillText(this.r + " Ω", this.startx + this.width / 3, this.y + 3);
-    };
-    return Resistor;
-}());
+    }
+}

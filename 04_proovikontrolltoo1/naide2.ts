@@ -31,3 +31,4 @@ h1.lisa(75, 35);
 console.log(h1, h1.ymbermoot());
 console.log(h2);
 export{Hulknurk};
+

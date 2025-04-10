@@ -6,8 +6,8 @@
 // Käsklusena väljasta tekkiva hulknurga ümbermõõt. Kuva tekkinud kujund ekraanile.
 class Kolmnurk{
     
-     public xKoord: number[];
-     public yKoord: number[];
+     protected xKoord: number[];
+     protected yKoord: number[];
 
      constructor(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number){
         this.xKoord = [x1, x2, x3];

@@ -1,5 +1,6 @@
-var Resistor = /** @class */ (function () {
-    function Resistor(r, g, startx, endx, y) {
+"use strict";
+class Resistor {
+    constructor(r, g, startx, endx, y) {
         this.r = r;
         this.g = g;
         this.startx = startx;
@@ -12,7 +13,7 @@ var Resistor = /** @class */ (function () {
         this.width = this.endx - this.startx;
         this.draw();
     }
-    Resistor.prototype.draw = function () {
+    draw() {
         this.g.clearRect(this.startx, this.y - this.height / 2, this.width, this.height + 20);
         this.g.beginPath();
         this.g.moveTo(this.startx, this.y);
@@ -24,34 +25,33 @@ var Resistor = /** @class */ (function () {
         this.g.fillText(this.r + " Ω", this.startx + this.width / 3, this.y + 3);
         this.g.fillText(this.voimsus + " W, ", this.startx + this.width / 3, this.y + this.height - 10);
         this.g.fillText(this.u + " V, " + this.i.toFixed(3) + " A", this.startx + this.width / 4, this.y - this.height / 3 - 2);
-    };
-    Resistor.prototype.setR = function (r) {
+    }
+    setR(r) {
         this.r = r;
         this.calculateCurrent();
         this.draw();
-    };
-    Resistor.prototype.getR = function () {
+    }
+    getR() {
         return this.r;
-    };
-    Resistor.prototype.setU = function (u) {
+    }
+    setU(u) {
         this.u = u;
         this.calculateCurrent();
         this.draw();
-    };
-    Resistor.prototype.getU = function () {
+    }
+    getU() {
         return this.u;
-    };
-    Resistor.prototype.setW = function (voimsus) {
+    }
+    setW(voimsus) {
         this.voimsus = voimsus;
         this.calculateCurrent();
         this.draw();
-    };
-    Resistor.prototype.getW = function () {
+    }
+    getW() {
         return this.voimsus;
-    };
-    Resistor.prototype.calculateCurrent = function () {
+    }
+    calculateCurrent() {
         this.voimsus = this.u * this.r;
         this.i = this.u / this.r;
-    };
-    return Resistor;
-}());
+    }
+}

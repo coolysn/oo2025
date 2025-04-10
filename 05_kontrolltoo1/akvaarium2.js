@@ -1,7 +1,8 @@
-// Hoiab meeles sees hoitava vee kogust. Käsuga saab vett lisada. L'suga küsida kui palju akvaariumis vett. 
+"use strict";
+// Hoiab meeles sees hoitava vee kogust. Käsuga saab vett lisada, küsida kui palju akvaariumis vett. 
 //Kui üle ääre antakse eraldi teada. veekogus on ruumala
-var Akvaarium2 = /** @class */ (function () {
-    function Akvaarium2(pikkus, laius, korgus) {
+class Akvaarium2 {
+    constructor(pikkus, laius, korgus) {
         this.pikkus = pikkus;
         this.laius = laius;
         this.korgus = korgus;
@@ -10,10 +11,10 @@ var Akvaarium2 = /** @class */ (function () {
         this.korgus = korgus;
         this.veekogus = 0;
     }
-    Akvaarium2.prototype.ruumala = function () {
+    ruumala() {
         return this.pikkus * this.laius * this.korgus;
-    };
-    Akvaarium2.prototype.lisaVett = function (kogus) {
+    }
+    lisaVett(kogus) {
         if (this.veekogus + kogus > this.ruumala()) {
             console.log("Hoiatus: Vesi läheb üle ääre!");
             this.veekogus = this.ruumala();
@@ -21,13 +22,12 @@ var Akvaarium2 = /** @class */ (function () {
         else if (this.veekogus + kogus <= this.ruumala()) {
             this.veekogus += kogus;
         }
-    };
-    Akvaarium2.prototype.veeKogus = function () {
+    }
+    veeKogus() {
         return this.veekogus;
-    };
-    return Akvaarium2;
-}());
-var ak1 = new Akvaarium2(6, 4, 5);
+    }
+}
+let ak1 = new Akvaarium2(6, 4, 5);
 console.log(ak1.ruumala());
 console.log("Vett on akvaariumis ", ak1.veeKogus(), "liitrit.");
 ak1.lisaVett(20);
