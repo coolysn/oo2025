@@ -1,9 +1,7 @@
 class Calculator2 {
-    constructor() {
-        this.panelContents = '';
-    }
+    panelContents = '';
     pressButton(button) {
-        if (/^[0-9+*/-]$/.test(button)) { //Regulaaravaldis, kontrollib kas number või märk
+        if (/^[0-9+*/-]$/.test(button)) {
             this.panelContents += button;
         }
     }

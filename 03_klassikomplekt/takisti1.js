@@ -1,5 +1,7 @@
 "use strict";
 class Resistor {
+    r;
+    g;
     constructor(r, g) {
         this.r = r;
         this.g = g;

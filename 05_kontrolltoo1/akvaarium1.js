@@ -2,6 +2,9 @@
 // Klass akvaariumi tarbeks. pikkus, laius, korgus on cm. Käsklus ruumala väljastamiseks.
 // Ruumala valem: pikkus* kõrgus*laius
 class Akvaarium {
+    pikkus;
+    laius;
+    korgus;
     constructor(pikkus, laius, korgus) {
         this.pikkus = pikkus;
         this.laius = laius;

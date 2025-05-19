@@ -1,9 +1,9 @@
 "use strict";
 //Loo käsk kontrollimaks, kas parameetrina antud pinge on vastava takisti puhul lubatud - st. kas pingestamisel eralduv võimsus jääb lubatud maksimuvõimsuse piiresse
 class Resistor {
+    r = 0;
+    maxP = 0;
     constructor(r, maxP) {
-        this.r = 0;
-        this.maxP = 0;
         this.r = r;
         this.maxP = maxP;
     }

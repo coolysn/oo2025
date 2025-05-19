@@ -1,10 +1,12 @@
 "use strict";
 class ColorBox {
+    canvas;
+    ctx;
+    width = 100;
+    height = 100;
     constructor(canvas, ctx) {
         this.canvas = canvas;
         this.ctx = ctx;
-        this.width = 100;
-        this.height = 100;
     }
     draw(r, g, b) {
         this.ctx.clearRect(0, 0, this.width, this.height);

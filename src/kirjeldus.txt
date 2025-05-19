@@ -1,1 +1,5 @@
 Tunnis ette võetud teemal viimistletud omapoolne rakendus.
+
+web based scientific calculator
+- math quill for visual input
+- 4 new equations

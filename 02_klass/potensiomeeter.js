@@ -1,11 +1,15 @@
 "use strict";
 class Potentsiomeeter {
+    nurkMin;
+    nurkMax;
+    rMin;
+    rMax;
+    nurk = 0;
     constructor(nurkMin, nurkMax, rMin, rMax) {
         this.nurkMin = nurkMin;
         this.nurkMax = nurkMax;
         this.rMin = rMin;
         this.rMax = rMax;
-        this.nurk = 0;
     }
     muudaNurk(delta) {
         let uusNurk = this.nurk + delta;

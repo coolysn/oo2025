@@ -1,7 +1,7 @@
-import { Calculator } from "../calculator4";
+import { Calculator4 } from "../src/calculator4";
 let calcObj = null;
 beforeEach(() => {
-    calcObj = new Calculator();
+    calcObj = new Calculator4();
 });
 test("delete last character", () => {
     calcObj.pressButton("5");

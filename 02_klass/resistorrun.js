@@ -3,6 +3,7 @@
 //Esimese takistus 110 oomi, teise takistus 220 oomi, kolmanda takistus 4700 oomi (ehk 4,7 kilooomi). 
 // Arvuta iga takisti puhul vool 5-voldise pinge korral.
 class Resistor {
+    r;
     constructor(r) {
         this.r = r;
     }

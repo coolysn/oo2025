@@ -3,6 +3,8 @@
 //Lisa klassile käsklus punkti koordinaadipaari lisamiseks. Käsklusena väljasta tekkiva hulknurga ümbermõõt. Kuva tekkinud kujund ekraanile.
 // Lisa klassile käsklused kogu kujundi nihutamiseks ning suurendamiseks/vähendamiseks. Võimalda küsida punktide uued asukohad ning külgede pikkused, näita kujundit ekraanil.
 class KolmNurk {
+    xCords;
+    yCords;
     constructor(xCords, yCords) {
         this.xCords = xCords;
         this.yCords = yCords;

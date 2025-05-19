@@ -1,5 +1,6 @@
 "use strict";
 class CharCounter {
+    adder;
     //Takes adder onject as a parameter and stores it in a protected variable
     constructor(adder) {
         this.adder = adder;
@@ -14,9 +15,7 @@ class CharCounter {
     }
 }
 class SimpleAdder {
-    constructor() {
-        this.sum = 0; //algne sum on 0. Peab defineerima
-    }
+    sum = 0; //algne sum on 0. Peab defineerima
     add(nr) { this.sum += nr; } // lisa uus arv summale
     getSum() {
         return this.sum;

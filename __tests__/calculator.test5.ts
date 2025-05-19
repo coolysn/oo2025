@@ -1,6 +1,6 @@
-import { Calculator5 } from "../calculator5";
-
-let calcObj: Calculator5 | null = null;
+const { Calculator5 } = require("../src/calculator5");
+// @ts-ignore
+let calcObj: InstanceType<typeof Calculator5> | null = null;
 
 beforeEach(() => {
     calcObj = new Calculator5();

@@ -1,5 +1,7 @@
 "use strict";
 class Hulknurk2 {
+    xd;
+    yd;
     constructor(xd, yd) {
         this.xd = xd;
         this.yd = yd;

@@ -52,20 +52,28 @@
         <button class="button" value="0">0</button>
         <button class="button" value="=">=</button>
         <button class="button" value="/">/</button>
+        <button class="button" value="sin">sin</button>
+        <button class="button" value="cos">cos</button>
+        <button class="button" value="tan">tan</button>
+        <button class="button" value="sqrt">sqrt</button>
         <button class="button" value="AC">AC</button>
     </div>
 
     <script type="module">
-        import { Calculator5 } from './calculator5.js'; 
+        import { UnifiedCalculator } from './calculator.js'; 
         
-        let calObj = new Calculator5();
-    
-        document.querySelectorAll("button").forEach(button => {
-            button.addEventListener("click", function(event) {
-                calObj.pressButton(event.target.value);
-                document.getElementById("panel").innerText = calObj.getPanelContents();
+        try {
+            const calObj = new UnifiedCalculator();
+        
+            document.querySelectorAll("button").forEach(button => {
+                button.addEventListener("click", function(event) {
+                    calObj.pressButton(event.target.value);
+                    document.getElementById("panel").innerText = calObj.getPanelContents();
+                });
             });
-        });
+        } catch (error) {
+            console.error("Calculator initialization error:", error);
+        }
     </script>
     
 </body>

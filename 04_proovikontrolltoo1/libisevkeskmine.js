@@ -24,10 +24,8 @@ console.log(libisevkeskmine([10, 20, 30, 40, 50]));
 //Teise käsuga saab küsida nende arvude libiseva keskmise massiivi vastavalt eelmise punkti juhendile.
 //Koosta kood nõnda, et uue arvu lisamisel eksemplarile tehtaks uusi arvutusi võimalikult vähe (st. ei arvutataks kogu tulemust massiivi algusest uuesti)
 class LibisevKeskmine {
-    constructor() {
-        this.arvud = [];
-        this.keskmised = [];
-    }
+    arvud = [];
+    keskmised = [];
     addNew(arv) {
         this.arvud.push(arv);
         if (this.arvud.length >= 3) {

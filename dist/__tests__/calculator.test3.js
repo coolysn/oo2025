@@ -1,7 +1,7 @@
-import { Calculator } from "../calculator3";
+import { Calculator3 } from "../src/calculator3";
 let calcObj = null;
 beforeEach(() => {
-    calcObj = new Calculator();
+    calcObj = new Calculator3();
 });
 test("simple addition", () => {
     calcObj.pressButton("4");

@@ -2,6 +2,10 @@
 // Hoiab meeles sees hoitava vee kogust. Käsuga saab vett lisada, küsida kui palju akvaariumis vett. 
 //Kui üle ääre antakse eraldi teada. veekogus on ruumala
 class Akvaarium2 {
+    pikkus;
+    laius;
+    korgus;
+    veekogus;
     constructor(pikkus, laius, korgus) {
         this.pikkus = pikkus;
         this.laius = laius;

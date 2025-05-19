@@ -1,4 +1,6 @@
 class Hulknurk {
+    xd;
+    yd;
     constructor(xd, yd) {
         this.xd = xd;
         this.yd = yd;

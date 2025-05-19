@@ -1,7 +1,5 @@
 class Calculator4 {
-    constructor() {
-        this.panelContents = '';
-    }
+    panelContents = '';
     pressButton(button) {
         if (/^[0-9+*/-]$/.test(button)) {
             this.panelContents += button;

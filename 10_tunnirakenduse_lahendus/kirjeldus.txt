@@ -1,1 +1,9 @@
 Tunnis ette võetud teemal viimistletud rakendus.
+
+kalkulaatori tegemine, lisada 5 keerukamat arvutamise valemit.
+
+eraldi alam klasidena - sin cos tan ruutjuur (olemas 4 eelnevat)
+
+Kasulikud lingid:
+https://docs.mathquill.com/en/latest/Getting_Started/
+

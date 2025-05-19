@@ -1,6 +1,6 @@
 "use strict";
-var _a;
 class SavingsAccount {
+    balance;
     constructor(initialBalance) {
         this.balance = initialBalance;
     }
@@ -22,8 +22,10 @@ class SavingsAccount {
     }
 }
 class DailyAccount {
+    balance;
+    dailyLimit;
+    dailyWithdrawn = 0;
     constructor(initialBalance, dailyLimit) {
-        this.dailyWithdrawn = 0;
         this.balance = initialBalance;
         this.dailyLimit = dailyLimit;
     }
@@ -56,7 +58,7 @@ let savings = new SavingsAccount(500);
 let daily = new DailyAccount(500, 300);
 let activeAccount = savings;
 //kasutaja valib kontode vahel
-(_a = document.getElementById("accountType")) === null || _a === void 0 ? void 0 : _a.addEventListener("change", (event) => {
+document.getElementById("accountType")?.addEventListener("change", (event) => {
     activeAccount = event.target.value === "daily" ? daily : savings;
     if (activeAccount instanceof DailyAccount) {
         updateBalance(activeAccount.getBalance(), activeAccount.getRemainingDailyLimit());

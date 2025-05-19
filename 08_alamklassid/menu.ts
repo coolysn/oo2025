@@ -1,3 +1,4 @@
+// abstract class AbstractDrink is defined here; ensure there are no duplicate declarations elsewhere in your project.
 abstract class AbstractDrink {
     abstract getPrice():number;
     getDescription(): string {
@@ -5,7 +6,7 @@ abstract class AbstractDrink {
     }
 }
 
-class Coffee extends AbstractDrink {
+class CoffeeDrink extends AbstractDrink {
     protected size: string;
     
     constructor(size: string) {
@@ -47,8 +48,8 @@ class Juice extends AbstractDrink {
 
 //Jookide massiiv
 let drinks: AbstractDrink[] = [
-    new Coffee("väike"),
-    new Coffee("suur"),
+    new CoffeeDrink("väike"),
+    new CoffeeDrink("suur"),
     new Juice(250),
     new Juice(500)
 ];

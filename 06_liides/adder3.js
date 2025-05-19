@@ -1,6 +1,7 @@
 "use strict";
 //Array
 class CharCounter {
+    adder;
     //Takes adder onject as a parameter and stores it in a protected variable
     constructor(adder) {
         this.adder = adder;
@@ -15,9 +16,7 @@ class CharCounter {
     }
 }
 class StoringAdder {
-    constructor() {
-        this.store = []; //arrays hoidmine
-    }
+    store = []; //arrays hoidmine
     add(nr) {
         this.store.push(nr); //instead of updating a running total, nr stored individually
     }

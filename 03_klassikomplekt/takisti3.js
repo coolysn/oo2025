@@ -1,14 +1,20 @@
 "use strict";
 class Resistor {
+    r;
+    g;
+    startx;
+    endx;
+    y;
+    width;
+    height = 40;
+    u = 0;
+    i = 0;
     constructor(r, g, startx, endx, y) {
         this.r = r;
         this.g = g;
         this.startx = startx;
         this.endx = endx;
         this.y = y;
-        this.height = 40;
-        this.u = 0;
-        this.i = 0;
         this.width = this.endx - this.startx;
         this.draw();
     }

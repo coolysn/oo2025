@@ -1,4 +1,4 @@
-import { Calculator2 } from "../calculator2";
+import { Calculator2 } from "../src/calculator2";
 
 let calcObj: Calculator2 | null = null;
 

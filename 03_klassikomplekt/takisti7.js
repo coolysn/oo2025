@@ -1,8 +1,10 @@
 class Resistor {
+    r;
+    height = 30;
+    width = 70;
+    parent;
     constructor(r) {
         this.r = r;
-        this.height = 30;
-        this.width = 70;
     }
     getResistance() { return this.r; }
     setParent(p) {
@@ -28,12 +30,15 @@ class Resistor {
     }
 }
 class SeriesCircuit {
+    g;
+    startx;
+    y;
+    resistors = [];
+    width = 10;
     constructor(g, startx, y) {
         this.g = g;
         this.startx = startx;
         this.y = y;
-        this.resistors = [];
-        this.width = 10;
     }
     push(r) {
         this.resistors.push(r);

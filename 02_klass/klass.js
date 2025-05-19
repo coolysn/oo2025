@@ -1,8 +1,9 @@
 "use strict";
 class VabaLangemine {
+    algKiirus;
+    g = 9.81; // Gravitatsioonikiirendus (m/s²)
     constructor(algKiirus = 0) {
         this.algKiirus = algKiirus;
-        this.g = 9.81; // Gravitatsioonikiirendus (m/s²)
     }
     //Keha hetkekiirus pärast t sekundit,  valem: v = v0 + g * t
     getSpeed(t) {

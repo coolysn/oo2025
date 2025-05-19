@@ -1,7 +1,10 @@
-export class Calculator5 {
-    constructor() {
-        this.panelContents = '';
+class AbstractCalculator {
+    panelContents = '';
+    getPanelContents() {
+        return this.panelContents;
     }
+}
+export class UnifiedCalculator extends AbstractCalculator {
     pressButton(button) {
         if (/^[0-9+*/-]$/.test(button)) {
             this.panelContents += button;
@@ -10,7 +13,7 @@ export class Calculator5 {
             try {
                 this.panelContents = eval(this.panelContents).toString();
             }
-            catch (_a) {
+            catch {
                 this.panelContents = "Error";
             }
         }
@@ -20,8 +23,22 @@ export class Calculator5 {
         else if (button === "AC") {
             this.panelContents = "";
         }
-    }
-    getPanelContents() {
-        return this.panelContents;
+        else if (["sin", "cos", "tan"].includes(button)) {
+            try {
+                const number = eval(this.panelContents);
+                if (button === "sin")
+                    this.panelContents = Math.sin(number).toString();
+                else if (button === "cos")
+                    this.panelContents = Math.cos(number).toString();
+                else if (button === "tan")
+                    this.panelContents = Math.tan(number).toString();
+            }
+            catch {
+                this.panelContents = "Error";
+            }
+        }
+        else {
+            this.panelContents += button;
+        }
     }
 }

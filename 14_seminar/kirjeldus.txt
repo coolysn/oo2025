@@ -1,1 +1,64 @@
 Märkmed seminari teemadel
+
+- vähemalt pool lehekülge?
+- suvepraktika koodi osa, ettevalmistada
+- eksamil pead selgitama vb milline on staatiline ja milline isendi meetodeid
+- pead olema valmis näitama ette ükskõik millist kodutööd ja ka selgitama
+- kõik kodutööd peavad olema tehtud
+
+Vead: Jagamine nulliga
+
+try - proovib koodi mis try järel pandud
+catch - kui ei õnnestunud kuva veateade, mis tekkis
+throw - custom error message mida näitab
+
+
+Isendimuutujad ja -meetodid (instance): IGA OBJEKTILE (kasutad auto1.nimi)
+-Need kuuluvad iga objekti (isendi) juurde eraldi.
+-Peab tegema new abil uue objekti, et neid kasutada. (kasutatakse constructorit)
+-Konstruktorit kasutatakse klassi isendi loomiseks ja selle algväärtustamiseks.
+-(Iga inimene eraldi)
+-kui teha new KlassNimi(...), kutsutakse konstruktor, et luua uus objekt koos vajalike andmetega.
+
+Staatilised muutujad ja meetodid (static): KLASSILE ENDALE (auto.mitu())                
+-Need kuuluvad klassile endale, mitte konkreetsele objektile.
+-Neid saad kasutada ilma objekti loomata.
+-Funktsioon või info ei sõltu ühestki konkreetsest objektist.
+-Üldisem (nt loendur, üldine inimeste arv)
+
+staatilised meetodid on seotud klassiga
+isendimeetodid on seotud klassi isendiga (ehk konkreetse objektiga). 
+Staatilisi meetodeid saab kutsuda ilma klassi objekti loomata
+isendimeetodeid saab kutsuda ainult klassi isendil.
+
+
+
+static koguarv: number = 0;
+constructor(värv: string) {
+    this.värv = värv; //isendimeetod
+    Auto.koguarv++; //static
+  }
+
+Liideste kasutamine - Kirjeldab mida peavad tegema erinevad klassid või asjad. 
+- iga klass saab implementeerida ühte liidest (turvalisem, väiksem tõenäosus asjad lähevad katki).
+
+Liides - 
+- konstruktor pole
+
+Abstraktne klass 
+- sarnaselt liidesele, mall mida alamklassid saavad pärida.
+- alamklass saab pärida ainult 1 abstraktse klassi aga mitu erinevat liidest.
+- saab defineerida loogika alamklassi 
+- on konstruktor, peab kasutama super() kindlasti
+- extends kasutad
+- abstrakt klass võimaldab ülekirjutada vanemklassi?
+- typescript eripära, abstract klassid muutuvad js compileis classideks, tavaklassid kaovad ära.
+
+Automaattestid rakenduse kavandamise juures
+- Testid enne koodi (mida osa peab tegema, mis on sisend/väljund)
+- Automaattestid sunnivad jupi kaupa isoleerima süsteemi osi.
+- Testid toimivad elava dokumenteerimisena. (kuidas süsteem peaks käituma)
+
+Automaattestid koodi muutmise juures
+- Jest, Viete
+- Keegi tellib lisafunktsionaalsust: kas vanad asjad jäävad tööle nii nagu varem.

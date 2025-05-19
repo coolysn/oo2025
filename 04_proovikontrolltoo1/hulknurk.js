@@ -6,6 +6,8 @@
 //Lisa klassile käsklus punkti koordinaadipaari lisamiseks. 
 // Käsklusena väljasta tekkiva hulknurga ümbermõõt. Kuva tekkinud kujund ekraanile.
 class Kolmnurk {
+    xKoord;
+    yKoord;
     constructor(x1, y1, x2, y2, x3, y3) {
         this.xKoord = [x1, x2, x3];
         this.yKoord = [y1, y2, y3];
@@ -13,11 +15,11 @@ class Kolmnurk {
     getKolmnurk() {
         return { x: this.xKoord, y: this.yKoord };
     }
+    addPoint(x, y) {
+        this.xKoord.push(x);
+        this.yKoord.push(y);
+    }
 }
-void {
-    this: .xKoord.push(x),
-    this: .yKoord.push(y)
-};
 let kolmnurk = new Kolmnurk(1, 0, 3, 0, 2, 3);
 console.log(kolmnurk.getKolmnurk());
 let kolmnurk2 = new Kolmnurk(2, 0, 4, 1, 5, 2);

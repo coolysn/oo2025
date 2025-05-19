@@ -1,7 +1,7 @@
-import { Calculator2 } from "../calculator2";
+import { Calculator2 } from "../src/calculator2";
 let calcObj = null;
 beforeEach(() => {
-    calcObj = new Calculator();
+    calcObj = new Calculator2();
 });
 test("empty int", () => {
     expect(calcObj.getPanelContents()).toBe("");
